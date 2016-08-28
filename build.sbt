@@ -1,4 +1,5 @@
 import com.trueaccord.scalapb.{ScalaPbPlugin => PB}
+import sbt.Keys._
 
 name := """combatpong"""
 
@@ -6,13 +7,11 @@ version := "1.0"
 
 scalaVersion := "2.11.6"
 
-// Change this to another test framework if you prefer
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
-
-// Uncomment to use Akka
-//libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.3.11"
+libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.3"
+libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
 
 PB.protobufSettings
-
 PB.runProtoc in PB.protobufConfig := (args =>
   com.github.os72.protocjar.Protoc.runProtoc("-v261" +: args.toArray))
+scalaSource in PB.protobufConfig := sourceManaged.value
