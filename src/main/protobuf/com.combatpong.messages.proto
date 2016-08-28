@@ -1,3 +1,85 @@
+message ClientMessage {
+    enum Type {
+        PING_REQUEST = 0;
+        USER_REGISTRATION = 1;
+        GAME_START_REQUEST = 2;
+    }
+
+    oneof payload {
+        PingRequest ping_request = 1;
+        UserRegistration user_registration = 2;
+        GameStartRequest game_start_request = 3;
+    }
+}
+
 message PingRequest {
-    required string id = 1;
+    required int32 challenge = 1;
+}
+
+message UserRegistration {
+    required string name = 1;
+}
+
+message GameStartRequest {
+}
+
+message UserAction {
+    optional bool left = 1;
+    optional bool right = 2;
+    optional bool up = 3;
+    optional bool down = 4;
+    optional bool tap = 5;
+}
+
+//////////////////////////////////////////////////////
+
+message PingResponse {
+    required int32 challenge = 1;
+}
+
+message UserRegistrationAcceptance {
+}
+
+message GameInit {
+    required string opponent_name = 1;
+}
+
+message LevelInit {
+    required int32 level_num = 1;
+}
+
+message TimerUpdate {
+    required int32 remaining_time_ms = 1;
+}
+
+message Position {
+    required int32 x = 1;
+    required int32 y = 2;
+}
+
+message GameStart {
+    // game width
+    // game hight
+    // bat height
+    // bat width
+    // ball position
+}
+
+message GameUpdate {
+    optional Position player_position = 1;
+    optional Position enemy_position = 2;
+    optional Position ball_position = 3;
+}
+
+message LevelEnd {
+}
+
+message GameEnd{
+    enum Reason {
+        GAME_COMPLETE = 0;
+        CONNECTION_LOST = 1;
+    }
+
+    required bool won = 1;
+    required Reason reason = 2;
 }

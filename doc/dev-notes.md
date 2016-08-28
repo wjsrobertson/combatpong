@@ -27,7 +27,7 @@
 * GameInit
 * TimerUpdate
 * GameStart
-* GameUpdate
+* GameUpdate - Position
 * LevelEnd
 * LevelInit
 * GameEnd

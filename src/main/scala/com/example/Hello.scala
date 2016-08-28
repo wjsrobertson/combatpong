@@ -4,7 +4,7 @@ import com.combatpong.messages.PingRequest
 
 object Hello {
   def main(args: Array[String]): Unit = {
-    PingRequest("")
+    PingRequest(1)
     println("Hello, world!")
   }
 }
