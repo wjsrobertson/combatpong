@@ -1,4 +1,6 @@
-# Tech
+# Development Notes
+
+## Tech
 
 * Protocol Buffers
 * Websockets
@@ -9,28 +11,30 @@
 * ES6
 * NPM
 
-# Messages
+## Messages
 
-ClientMessage:
-    PingRequest
-    UserRegistration
-    GameStartRequest
-    UserAction
+###ClientMessage
 
-ServerMessage:
-    PingResponse
-    UserRegistrationAcceptance
-    GameInit
-    TimerUpdate
-    GameStart
-    GameUpdate
-    LevelEnd
-    LevelInit
-    GameEnd
+* PingRequest
+* UserRegistration
+* GameStartRequest
+* UserAction
 
-# State
+###ServerMessage
 
-##Client states:
+* PingResponse
+* UserRegistrationAcceptance
+* GameInit
+* TimerUpdate
+* GameStart
+* GameUpdate
+* LevelEnd
+* LevelInit
+* GameEnd
+
+## State
+
+###Client states:
 
                                                                         />-----> GameEnding ----> GameOver
                                                                         |                            |
