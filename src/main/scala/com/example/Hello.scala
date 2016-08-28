@@ -1,10 +1,10 @@
 package com.example
 
-import ClientMessages._
+import com.combatpong.messages.PingRequest
 
 object Hello {
   def main(args: Array[String]): Unit = {
-    //PingRequest()
+    PingRequest("")
     println("Hello, world!")
   }
 }
