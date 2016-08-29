@@ -44,3 +44,7 @@
                         |                                                                            |
                         ----------------------------------------------------------------------------</
 
+
+## Project import
+
+*Intellij* - add `target/scala-2.11/src_managed` to module sources if Intellij doesn't pick it up itself
