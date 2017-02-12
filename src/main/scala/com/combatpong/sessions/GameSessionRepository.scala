@@ -18,4 +18,3 @@ class GameSessionRepository {
 
   def getAll = gameSessions.toSet
 }
-gameRepository
