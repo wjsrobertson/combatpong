@@ -1,0 +1,15 @@
+<web-app>
+
+    <!--
+    <servlet>
+        <servlet-name>my servlet</servlet-name>
+        <servlet-class>servlets.MyServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>my servlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    -->
+
+</web-app>

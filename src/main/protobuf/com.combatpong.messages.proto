@@ -1,14 +1,19 @@
+syntax = "proto2";
+option java_package = "com.combatpong.messages";
+
 message ClientMessage {
     enum Type {
         PING_REQUEST = 0;
         USER_REGISTRATION = 1;
         GAME_START_REQUEST = 2;
+        USER_ACTION = 3;
     }
 
     oneof payload {
         PingRequest ping_request = 1;
         UserRegistration user_registration = 2;
         GameStartRequest game_start_request = 3;
+        UserAction user_action = 4;
     }
 
     required Type message_type = 15;
@@ -71,7 +76,6 @@ message UserRegistrationAccept {
 }
 
 message GameInit {
-    required string enemy_name = 1;
 }
 
 message LevelInit {
@@ -100,6 +104,7 @@ message GameStart {
     required int32 ball_radius = 5;
     required Position ball_position = 6;
     required Rect game_size = 7;
+    required string enemy_name = 8;
 }
 
 message GameUpdate {

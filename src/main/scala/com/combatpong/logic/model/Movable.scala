@@ -1,4 +1,4 @@
-package com.combatpong.model
+package com.combatpong.logic.model
 
 trait Movable {
 
