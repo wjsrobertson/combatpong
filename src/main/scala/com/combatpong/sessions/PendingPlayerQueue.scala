@@ -9,6 +9,7 @@ import scala.collection._
 
 // TODO - reconsider mutability in nextPair
 // TODO - get the implicit Predicate conversion working for queue.removeIf
+// TODO - don't use blocking
 class PendingPlayerQueue(val queue: BlockingQueue[DownstreamPlayer] = new ArrayBlockingQueue[DownstreamPlayer](128, true)) {
 
   /*

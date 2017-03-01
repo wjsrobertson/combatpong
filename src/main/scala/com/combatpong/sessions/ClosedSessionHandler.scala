@@ -15,9 +15,9 @@ class ClosedSessionHandler(pendingPlayerQueue: PendingPlayerQueue,
     endLiveGameIfInProgress(session)
   }
 
-  def removePlayerFromGameQueueIfPresent(session: Session) = pendingPlayerQueue.removeBySessionId(session.getId)
+  private def removePlayerFromGameQueueIfPresent(session: Session) = pendingPlayerQueue.removeBySessionId(session.getId)
 
-  def endLiveGameIfInProgress(session: Session) = {
+  private def endLiveGameIfInProgress(session: Session) = {
     gameSessionRepository.findBySessionId(session.getId).foreach(g => {
       gameSessionRepository.remove(g)
       gameRepository.remove(g)
